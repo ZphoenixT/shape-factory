@@ -2,6 +2,19 @@
 
 import { getColorName, getSelectedOptions, createShape } from './utils.js';
 
+document.addEventListener('DOMContentLoaded', () => {
+  const creationButton = document.querySelector('.creationButton');
+  const resetButton = document.querySelector('.resetButton');
+
+  creationButton.addEventListener('click', () => {
+    console.log('Creation button clicked');
+  });
+
+  resetButton.addEventListener('click', () => {
+    console.log('Reset button clicked');
+  });
+});
+
 class Shape {
   constructor(name, colour) {
     this._name = name;
