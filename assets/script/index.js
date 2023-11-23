@@ -1,6 +1,6 @@
 'use strict';
 
-import { getColorName, getSelectedOptions, createShape } from './shapeUtils.js';
+import { getColorName, getSelectedOptions, createShape } from './utils';
 
 class Shape {
   constructor(name, colour) {
