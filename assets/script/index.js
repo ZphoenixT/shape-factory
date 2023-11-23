@@ -1,6 +1,6 @@
 'use strict';
 
-import { getColorName, getSelectedOptions, createShape } from './utils';
+import { getColorName, getSelectedOptions, createShape } from './utils.js';
 
 class Shape {
   constructor(name, colour) {
@@ -21,55 +21,57 @@ class Shape {
   }
 }
 
-const creationButton = document.querySelector('.creationButton');
-const resetButton = document.querySelector('.resetButton');
-const factoryFloor = document.querySelector('.factoryFloor');
-const factoryInfo = document.querySelector('.shapeInfo');
+document.addEventListener('DOMContentLoaded', () => {
+  const creationButton = document.querySelector('.creationButton');
+  const resetButton = document.querySelector('.resetButton');
+  const factoryFloor = document.querySelector('.factoryFloor');
+  const factoryInfo = document.querySelector('.shapeInfo');
 
-let shapeCount = 0;
+  let shapeCount = 0;
 
-creationButton.addEventListener('click', handleCreateButtonClick);
-resetButton.addEventListener('click', resetFactoryFloor);
+  creationButton.addEventListener('click', () => handleCreateButtonClick(factoryInfo, shapeCount, factoryFloor));
+  resetButton.addEventListener('click', () => resetFactoryFloor(factoryFloor, factoryInfo, shapeCount));
 
-function handleCreateButtonClick() {
-  const maxColumns = 7;
-  const maxRows = 5;
-  const shapeSize = 100;
-  const padding = 10;
+  function handleCreateButtonClick(factoryInfo, shapeCount, factoryFloor) {
+    const maxColumns = 7;
+    const maxRows = 5;
+    const shapeSize = 100;
+    const padding = 10;
 
-  if (shapeCount >= maxColumns * maxRows) {
-    factoryInfo.textContent = 'Maximum shape limit reached (7x5 grid)!';
-    return;
+    if (shapeCount >= maxColumns * maxRows) {
+      factoryInfo.textContent = 'Maximum shape limit reached (7x5 grid)!';
+      return;
+    }
+
+    const { shapeColor, shapeShape } = getSelectedOptions();
+
+    if (shapeColor !== '0' && shapeShape !== '0') {
+      const shape = new Shape(
+        shapeShape === '1' ? 'Square' : 'Circle',
+        getColorName(shapeColor)
+      );
+      createShape(
+        shape,
+        shapeCount,
+        maxColumns,
+        maxRows,
+        shapeSize,
+        padding,
+        factoryFloor,
+        displayShapeInfo
+      );
+    } else {
+      factoryInfo.textContent = 'Please select both shape and color!';
+    }
   }
 
-  const { shapeColor, shapeShape } = getSelectedOptions();
-
-  if (shapeColor !== '0' && shapeShape !== '0') {
-    const shape = new Shape(
-      shapeShape === '1' ? 'Square' : 'Circle',
-      getColorName(shapeColor)
-    );
-    createShape(
-      shape,
-      shapeCount,
-      maxColumns,
-      maxRows,
-      shapeSize,
-      padding,
-      factoryFloor,
-      displayShapeInfo
-    );
-  } else {
-    factoryInfo.textContent = 'Please select both shape and color!';
+  function resetFactoryFloor(factoryFloor, factoryInfo, shapeCount) {
+    factoryFloor.innerHTML = '';
+    factoryInfo.textContent = '';
+    shapeCount = 0;
   }
-}
 
-function resetFactoryFloor() {
-  factoryFloor.innerHTML = '';
-  factoryInfo.textContent = '';
-  shapeCount = 0;
-}
-
-function displayShapeInfo(shape, row, column) {
-  factoryInfo.textContent = shape.getInfo(row, column);
-}
+  function displayShapeInfo(shape, row, column) {
+    factoryInfo.textContent = shape.getInfo(row, column);
+  }
+});
