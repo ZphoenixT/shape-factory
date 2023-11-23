@@ -45,3 +45,20 @@ body {
 .textStyle {
     color: var(--col-white);
 }
+
+/*--------------Selecting/Making Shapes------------- */
+
+select {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: var(--col-main-dark-blue);
+    border: 3px solid color(srgb (255, 0, 0));
+}
+
+.creationButton {
+    width: 90px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: var(--col-main-blue);
+}
