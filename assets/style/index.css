@@ -46,11 +46,15 @@ body {
 
 .textStyle {
     color: var(--col-white);
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
-    margin: 25px 0px 25px 0px;
+    margin: 55px 0px 25px 0px;
+}
+
+h3 {
+    margin-top: 25px;
 }
 
 /*------------------------END----------------------- */
@@ -67,6 +71,7 @@ select {
     height: 40px;
     border-radius: 5px;
     margin: 5px 10px 15px 10px;
+    color: var(--col-white);
     background-color: var(--col-main-dark-blue);
     border: 3px solid color(srgb (255, 0, 0));
 }
@@ -79,11 +84,23 @@ button {
 }
 
 .creationButton {
-    background-color: var(--col-main-blue);
+    background-color: #148aff;
+    transition: all 0.3s ease-in-out;
 }
 
 .resetButton {
-    background-color: var(--col-main-blue);
+    background-color: #d80000;
+    transition: all 0.3s ease-in-out;
+}
+
+.creationButton:hover {
+    background-color: #0080ff;
+    transition: all 0.3s ease-in-out;
+}
+
+.resetButton:hover {
+    background-color: #c40000;
+    transition: all 0.3s ease-in-out;
 }
 
 /*--------------End of Selection area--------------- */
@@ -92,10 +109,10 @@ button {
 
 .factoryFloor{
     height: 550px;
-    width: 800px;
+    width: 770px;
     border-radius: 5px;
     margin-top: 10px;
-    background-color: var(--col-black);
+    background-color: #00000040;
     overflow: auto;
     position: relative;
 }
@@ -109,19 +126,15 @@ button {
     margin: 5px; 
     height: 100px; 
     width: 100px;
-  }
+}
   
-  .square {
+.square {
     border-radius: 5px;
-    /* background-color: transparent;
-    margin: 5px 5px 5px 5px; */
-  }
+}
   
-  .circle {
+.circle {
     border-radius: 50%;
-    /* margin: 5px 5px 5px 5px;
-    background-color: transparent; */
-  }
+}
   
 
 .blue {
