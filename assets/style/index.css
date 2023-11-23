@@ -66,7 +66,7 @@ select {
     width: 250px;
     height: 40px;
     border-radius: 5px;
-    margin: 5px 5px 15px 5px;
+    margin: 5px 10px 15px 10px;
     background-color: var(--col-main-dark-blue);
     border: 3px solid color(srgb (255, 0, 0));
 }
@@ -75,7 +75,7 @@ button {
     width: 90px;
     height: 40px;
     border-radius: 5px;
-    margin: 5px 5px 15px 5px;
+    margin: 5px 10px 15px 10px;
 }
 
 .creationButton {
@@ -91,10 +91,24 @@ button {
 /*--------------Factory Floor----------------------- */
 
 .factoryFloor{
-    height: 600px;
+    height: 550px;
     width: 800px;
     border-radius: 5px;
+    margin-top: 10px;
     background-color: var(--col-black);
 }
 
 /*--------------End of Factory Floor----------------- */
+
+/*---------------------The Shapes---------------------*/
+
+/* 
+    Placeholder info
+
+    floor = 800
+    800/5 = 160
+    shapes = 160
+    6 x 5 = 30
+    160 - 30 = 130
+
+*/
