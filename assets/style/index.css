@@ -42,23 +42,59 @@ body {
     align-items: center;
 }
 
+/*-------------Text/Universal code-----------------  */
+
 .textStyle {
     color: var(--col-white);
 }
 
+h1 {
+    text-align: center;
+    margin: 25px 0px 25px 0px;
+}
+
+/*------------------------END----------------------- */
+
 /*--------------Selecting/Making Shapes------------- */
 
+.selectionsBox {
+    display: flex;
+    justify-content: center;
+}
+
 select {
-    width: 200px;
-    height: 30px;
+    width: 250px;
+    height: 40px;
     border-radius: 5px;
+    margin: 5px 5px 15px 5px;
     background-color: var(--col-main-dark-blue);
     border: 3px solid color(srgb (255, 0, 0));
 }
 
-.creationButton {
+button {
     width: 90px;
-    height: 30px;
+    height: 40px;
     border-radius: 5px;
+    margin: 5px 5px 15px 5px;
+}
+
+.creationButton {
     background-color: var(--col-main-blue);
 }
+
+.resetButton {
+    background-color: var(--col-main-blue);
+}
+
+/*--------------End of Selection area--------------- */
+
+/*--------------Factory Floor----------------------- */
+
+.factoryFloor{
+    height: 600px;
+    width: 800px;
+    border-radius: 5px;
+    background-color: var(--col-black);
+}
+
+/*--------------End of Factory Floor----------------- */
